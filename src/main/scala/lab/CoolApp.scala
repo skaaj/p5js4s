@@ -1,70 +1,65 @@
+package lab
+
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-import scala.scalajs.js.PropertyDescriptor
 
-@js.native
-trait p5Api extends js.Object {
-  var setup: js.Function0[Unit] = js.native
-  var draw: js.Function0[Unit] = js.native
-  def createCanvas(w: Int, h: Int): Unit = js.native
-  def background(lum: Int): Unit = js.native
-  def ellipse(x: Int, y: Int, w: Int, h: Int): Unit = js.native
-}
+// object CoolApp {
+//   import lab.p5Api
 
-@js.native
-@JSGlobal
-class p5(sketch: js.Function1[p5, Unit]) extends p5Api {
+//   def setup(): Unit = {
+//     createCanvas(400, 400)
+//     println("setup called")
+//   }
 
-}
-
-@js.native
-@JSGlobalScope
-object p5 extends p5Api {
-  
-}
-
-object CoolApp {
-  import p5._
-
-  def setup(): Unit = {
-    createCanvas(400, 400)
-    println("setup called")
-  }
-
-  def draw(): Unit = {
-    background(0)
-  }
-}
-
-def addToWindow(key: String, value: js.Any) =
-  if isWindowDefined then
-    println("add to window")
-    js.Dynamic.global.window.updateDynamic(key)(value)
-  else
-    println("window not found, adding nothing")
-    ()
+//   def draw(): Unit = {
+//     background(0)
+//   }
+// }
 
 def isWindowDefined: Boolean =
   js.typeOf(js.Dynamic.global.window) != "undefined"
 
-def whenWindowDefined(f: => Unit): Unit = 
+def whenWindowDefined[A](f: => A): Unit = 
   if isWindowDefined then f else ()
 
-@main def main =
-  println(s"started")
-  whenWindowDefined {
-    val myscope = new p5(s => {
-      println("bec")
-      val w = 400
-      val h = 400
-      s.draw = () => {
-        s.background(0)
-        s.ellipse(w/2, h/2, w/2, h/2)
-      }
-      s.setup = () => {
-        s.createCanvas(w, h)
-      }
-      println("eoc")
-    })
+class Candidate() {
+  val w = 400
+  val h = 400
+  val semi_w = w / 2
+  val semi_h = h / 2
+
+  def setup(p5: p5Api): Unit = {
+    import p5._
+    createCanvas(w, h)
   }
+
+  def draw(p5: p5Api): Unit = {
+    import p5._
+    val frame = frameCount
+    noStroke()
+    p5.background(255)
+    p5.fill(0, 255)
+    p5.ellipse(semi_w, semi_h, w, h)
+    p5.fill(255, 255 / 4)
+    for i <- (75 to 175 by 25) do
+      p5.ellipse(
+        x=semi_w,
+        y=semi_h,
+        w=w * p5.sin(frame / i.toFloat),
+        h=h * p5.cos(frame / i.toFloat)
+      )
+  }
+}
+
+def helper(c: Candidate) = whenWindowDefined {
+  new p5(s => {
+    s.draw = () => c.draw(s)
+    s.setup = () => c.setup(s)
+  })
+}
+
+@main def main =
+  import lab.p5._
+  println(s"started")
+  helper(new Candidate())
   println("end")
