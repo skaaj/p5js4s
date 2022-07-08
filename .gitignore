@@ -6,6 +6,7 @@
 .history
 .lib/
 dist/*
+!dist/index-dev.html
 target/
 lib_managed/
 src_managed/
