@@ -1,7 +1,7 @@
 package lab
 
-class ClumsySketch(val p5Toolbox: p5Api) extends P5Sketch {
-  import p5Toolbox._
+class ClumsySketch(val p5Instance: P5Api) extends P5Sketch {
+  import p5Instance._
   
   val w = 400
   val h = 400

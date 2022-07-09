@@ -1,6 +1,7 @@
 package lab
 
 import scala.scalajs.js
+import scala.scalajs.js.annotation._
 
 object Helpers {
   def isWindowDefined: Boolean =
@@ -9,9 +10,9 @@ object Helpers {
   def whenWindowDefined[A](f: => A): Unit = 
     if isWindowDefined then f else ()
 
-  def bootstrapSketch(ctr: p5Api => P5Sketch) = whenWindowDefined {
+  def bootstrapSketch(constructor: P5Api => P5Sketch) = whenWindowDefined {
     new p5(s => {
-      val app = ctr(s)
+      val app = constructor(s)
       s.draw = app.draw _
       s.setup = app.setup _
     })

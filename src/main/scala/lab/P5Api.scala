@@ -4,7 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation._
 
 @js.native
-trait p5Api extends js.Object {
+trait P5Api extends js.Object {
   var setup: js.Function0[Unit] = js.native
   var draw: js.Function0[Unit] = js.native
   def createCanvas(w: Int, h: Int): Unit = js.native
@@ -17,11 +17,3 @@ trait p5Api extends js.Object {
   def noStroke(): Unit = js.native
   def fill(gray: Int, alpha: Int): Unit = js.native
 }
-
-@js.native
-@JSGlobal
-class p5(sketch: js.Function1[p5Api, Unit]) extends p5Api {}
-
-@js.native
-@JSGlobalScope
-object p5 extends p5Api {}
