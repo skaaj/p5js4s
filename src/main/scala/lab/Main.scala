@@ -3,7 +3,7 @@ package lab
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
 import Helpers._
-import P5Global._
+import lab.js.P5Global._
 
 val w = 400
 val h = 400

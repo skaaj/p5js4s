@@ -2,6 +2,8 @@ package lab
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
+import lab.js.P5Api
+import lab.js.p5
 
 object Helpers {
   def isWindowDefined: Boolean =

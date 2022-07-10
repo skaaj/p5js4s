@@ -1,5 +1,7 @@
 package lab
 
+import lab.js.P5Api
+
 class ClumsySketch(val p5Instance: P5Api) extends P5Sketch {
   import p5Instance._
   
