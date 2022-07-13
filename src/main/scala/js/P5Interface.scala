@@ -16,4 +16,5 @@ trait P5Interface extends js.Object {
   def stroke(gray: Int, alpha: Double): Unit = js.native
   def noStroke(): Unit = js.native
   def fill(gray: Int, alpha: Int): Unit = js.native
+  def clear(): Unit = js.native
 }

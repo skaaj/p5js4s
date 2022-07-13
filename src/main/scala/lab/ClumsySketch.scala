@@ -33,5 +33,6 @@ class ClumsySketch(val p5Instance: P5Interface) extends Sketch {
         w * sin(frameCount / i.toFloat),
         h * cos(frameCount / i.toFloat)
       )
+    clear()
   }
 }
