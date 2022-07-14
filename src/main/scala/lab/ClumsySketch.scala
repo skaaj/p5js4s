@@ -1,6 +1,8 @@
 package lab
 
-import lab.js.P5Interface
+import lab.p5js.P5Interface
+import scala.scalajs.js
+import js.JSConverters._
 
 class ClumsySketch(val p5Instance: P5Interface) extends Sketch {
   import p5Instance._
@@ -16,7 +18,7 @@ class ClumsySketch(val p5Instance: P5Interface) extends Sketch {
   
   def drawCircleBackground() = {
     background(255)
-    fill(0, 255)
+    fill(lerpColor(color("red"), color("blue"), sin(frameCount.toDouble / 100d).toFloat))
     ellipse(semi_w, semi_h, w, h)
   }
   
@@ -25,6 +27,7 @@ class ClumsySketch(val p5Instance: P5Interface) extends Sketch {
   }
   
   def draw(): Unit = {
+    clear()
     noStroke()
     drawCircleBackground()
     fill(255, 255 / 4)
@@ -33,6 +36,5 @@ class ClumsySketch(val p5Instance: P5Interface) extends Sketch {
         w * sin(frameCount / i.toFloat),
         h * cos(frameCount / i.toFloat)
       )
-    clear()
   }
 }

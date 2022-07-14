@@ -1,4 +1,4 @@
-package lab.js
+package lab.p5js
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._

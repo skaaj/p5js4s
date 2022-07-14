@@ -1,7 +1,7 @@
 package lab
 
-import lab.js.P5Interface
-import lab.js.p5
+import lab.p5js.P5Interface
+import lab.p5js.p5
 
 trait Sketch {
   val p5Instance: P5Interface
