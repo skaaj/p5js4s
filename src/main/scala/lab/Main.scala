@@ -7,5 +7,5 @@ import lab.p5js.p5
 
 @main def main =
   println("start")
-  Sketch.boostrap((new ClumsySketch(_)))
+  Sketch.boostrap((new StarFieldSketch(_)))
   println("end")

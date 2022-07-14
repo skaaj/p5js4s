@@ -18,7 +18,8 @@ class ClumsySketch(val p5Instance: P5Interface) extends Sketch {
   
   def drawCircleBackground() = {
     background(255)
-    fill(lerpColor(color("red"), color("blue"), sin(frameCount.toDouble / 100d).toFloat))
+    val c = lerpColor(color("red"), color("blue"), sin(frameCount / 100d))
+    fill(c)
     ellipse(semi_w, semi_h, w, h)
   }
   
