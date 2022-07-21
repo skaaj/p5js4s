@@ -30,7 +30,7 @@ class StarFieldSketch(val p5Instance: P5Interface) extends Sketch {
       noStroke()
       val sx = map(x / z, 0, 1, 0, width)
       val sy = map(y / z, 0, 1, 0, height)
-      val r = map(z, 0, width, 4, 0)
+      val r = map(z, 0, width, 5, 0)
       ellipse(sx, sy, r, r)
       val px = map(x / pz, 0, 1, 0, width)
       val py = map(y / pz, 0, 1, 0, height)
@@ -41,7 +41,7 @@ class StarFieldSketch(val p5Instance: P5Interface) extends Sketch {
   
   val width = 600
   val height = 600
-  val stars = (0 to 10000).map { _ =>
+  val stars = (0 to 5000).map { _ =>
     val z = random(width)
     Star(random(-width, width), random(-height, height), z, z)
   }

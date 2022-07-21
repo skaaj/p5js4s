@@ -8,7 +8,6 @@ import lab.p5js.Color
 trait P5Interface extends js.Object {
   var setup: js.Function0[Unit] = js.native
   var draw: js.Function0[Unit] = js.native
-  val frameCount: Int = js.native
   def createCanvas(w: Int, h: Int): Unit = js.native
   def sin(angle: Double): Double = js.native
   def cos(angle: Double): Double = js.native
@@ -22,6 +21,17 @@ trait P5Interface extends js.Object {
   def translate(x: Double, y: Double): Unit = js.native
   // TODO: translate(vector)
   // TODO: WebGL mode translate(x, y, z)
+  val frameCount: Int = js.native
+  val deltaTime: Double = js.native
+  val focused: Boolean = js.native
+  val displayWidth: Int = js.native
+  val displayHeight: Int = js.native
+  // TODO: handle cursor type with enum
+  def cursor(type: String): Unit = js.native
+  def cursor(type: String; x: Double, y: Double): Unit = js.native
+  def noCursor(): Unit = js.native
+  def frameRate(): Double = js.native
+  def frameRate(fps: Double): Unit = js.native
 
   // Color
   def color(gray: Double): Color = js.native
