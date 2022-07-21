@@ -8,6 +8,13 @@ import lab.p5js.Color
 trait P5Interface extends js.Object {
   var setup: js.Function0[Unit] = js.native
   var draw: js.Function0[Unit] = js.native
+  var mouseClicked: js.Function0[Unit] = js.native
+  var doubleClicked: js.Function0[Unit] = js.native
+  var keyPressed: js.Function0[Unit] = js.native
+  val mouseX: Double = js.native
+  val mouseY: Double = js.native
+  def dist(x1: Double, y1: Double, x2: Double, y2: Double): Double = js.native
+  def norm(value: Double, start: Double, stop: Double): Double = js.native
   def createCanvas(w: Int, h: Int): Unit = js.native
   def sin(angle: Double): Double = js.native
   def cos(angle: Double): Double = js.native
@@ -27,8 +34,8 @@ trait P5Interface extends js.Object {
   val displayWidth: Int = js.native
   val displayHeight: Int = js.native
   // TODO: handle cursor type with enum
-  def cursor(type: String): Unit = js.native
-  def cursor(type: String; x: Double, y: Double): Unit = js.native
+  def cursor(`type`: String): Unit = js.native
+  def cursor(`type`: String, x: Double, y: Double): Unit = js.native
   def noCursor(): Unit = js.native
   def frameRate(): Double = js.native
   def frameRate(fps: Double): Unit = js.native
