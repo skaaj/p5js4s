@@ -1,11 +1,13 @@
-package lab
+package lab.sketches
 
+import lab.sketches.Sketch
 import lab.p5js.P5Interface
+
 import scala.scalajs.js
-import js.JSConverters._
+import scala.scalajs.js.JSConverters.*
 
 class StarFieldSketch(val p5Instance: P5Interface) extends Sketch {
-  import p5Instance._
+  import p5Instance.*
   
   case class Star(
     var x: Double,
@@ -39,7 +41,7 @@ class StarFieldSketch(val p5Instance: P5Interface) extends Sketch {
   
   val width = 600
   val height = 600
-  val stars = (0 to 2000).map { _ =>
+  val stars = (0 to 10000).map { _ =>
     val z = random(width)
     Star(random(-width, width), random(-height, height), z, z)
   }

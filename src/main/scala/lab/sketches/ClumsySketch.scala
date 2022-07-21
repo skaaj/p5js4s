@@ -1,11 +1,13 @@
-package lab
+package lab.sketches
 
+import lab.sketches.Sketch
 import lab.p5js.P5Interface
+
 import scala.scalajs.js
-import js.JSConverters._
+import scala.scalajs.js.JSConverters.*
 
 class ClumsySketch(val p5Instance: P5Interface) extends Sketch {
-  import p5Instance._
+  import p5Instance.*
   
   val w = 400
   val h = 400
