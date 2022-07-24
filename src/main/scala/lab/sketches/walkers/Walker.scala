@@ -15,7 +15,7 @@ case class Walker(
       grid.addTrace(newX, newY, color)
       Some(copy(newX, newY))
     else
-      grid.makeGraveyard(x, y, 5)
+      grid.makeGraveyard(x, y, 10)
       None
   }
 
