@@ -1,10 +1,10 @@
 package lab.sketches.walkers
 
-import lab.p5js.Color
 import lab.sketches.core.Sketch
+import lab.p5js.Color
 
 class Grid(val width: Int, val height: Int, areaWidth: Float, areaHeight: Float)(implicit s: Sketch) {
-  import s.p5Instance._
+  import s.p5Instance.*
 
   val cellWidth = areaWidth / width
   val cellHeight = areaHeight / height
@@ -38,7 +38,7 @@ class Grid(val width: Int, val height: Int, areaWidth: Float, areaHeight: Float)
   def makeGraveyard(centerX: Int, centerY: Int, maxDist: Int): Unit = {
     getDefinedTracesInRadius(centerX.toDouble, centerY.toDouble, maxDist)
       .foreach { case (x, y, col) =>
-        walkersTraces(y)(x) = color(255)
+        walkersTraces(y)(x) = Some(color(255))
       }
   }
 

@@ -9,5 +9,5 @@ import lab.sketches.walkers.WalkersPartySketch
 
 @main def main =
   println("start")
-  Sketch.boostrap((new WalkersPartySketch(_)))
+  Sketch.boostrap((new StarFieldSketch(_)))
   println("end")

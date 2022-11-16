@@ -41,7 +41,7 @@ class StarFieldSketch(val p5Instance: P5Interface) extends Sketch {
   
   val width = 600
   val height = 600
-  val stars = (0 to 5000).map { _ =>
+  val stars = (0 to 1000).map { _ =>
     val z = random(width)
     Star(random(-width, width), random(-height, height), z, z)
   }
