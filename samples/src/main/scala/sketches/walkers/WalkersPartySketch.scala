@@ -1,13 +1,14 @@
-package lab.sketches.walkers
+package sketches.walkers
 
-import lab.p5js.P5Interface
-import lab.sketches.core.Sketch
+import p5js4s.P5Interface
+import sketches.core
+import sketches.core.Sketch
 
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters.*
 import scala.util.Random
 
-class WalkersPartySketch(val p5Instance: P5Interface) extends Sketch {
+class WalkersPartySketch(val p5Instance: P5Interface) extends core.Sketch {
   import p5Instance.*
 
   val w = 600

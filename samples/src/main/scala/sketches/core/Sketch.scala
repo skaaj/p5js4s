@@ -1,6 +1,6 @@
-package lab.sketches.core
+package sketches.core
 
-import lab.p5js.{P5Interface, p5}
+import p5js4s.{P5Interface, p5}
 
 trait Sketch {
   val p5Instance: P5Interface

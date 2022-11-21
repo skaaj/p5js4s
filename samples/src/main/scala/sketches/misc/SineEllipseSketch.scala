@@ -1,7 +1,7 @@
-package lab.sketches.misc
+package sketches.misc
 
-import lab.p5js.P5Interface
-import lab.sketches.core.Sketch
+import p5js4s.P5Interface
+import sketches.core.Sketch
 
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters.*

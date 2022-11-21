@@ -10,6 +10,7 @@ lazy val lib = (project in file("lib"))
   .enablePlugins(ScalaJSPlugin)
 
 lazy val samples = (project in file("samples"))
+  .dependsOn(lib)
   .settings(
     name := "p5js4s-samples",
     version := "0.1",

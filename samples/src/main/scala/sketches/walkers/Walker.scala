@@ -1,6 +1,6 @@
-package lab.sketches.walkers
+package sketches.walkers
 
-import lab.p5js.Color
+import p5js4s.Color
 
 case class Walker(
   x: Int,

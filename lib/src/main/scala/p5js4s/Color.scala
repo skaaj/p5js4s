@@ -1,4 +1,4 @@
-package lab.p5js
+package p5js4s
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSGlobal

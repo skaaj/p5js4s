@@ -1,9 +1,10 @@
-package lab.sketches.walkers
+package sketches.walkers
 
-import lab.sketches.core.Sketch
-import lab.p5js.Color
+import p5js4s.Color
+import sketches.core
+import sketches.core.Sketch
 
-class Grid(val width: Int, val height: Int, areaWidth: Float, areaHeight: Float)(implicit s: Sketch) {
+class Grid(val width: Int, val height: Int, areaWidth: Float, areaHeight: Float)(implicit s: core.Sketch) {
   import s.p5Instance.*
 
   val cellWidth = areaWidth / width
